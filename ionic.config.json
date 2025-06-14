@@ -1,0 +1,7 @@
+{
+  "name": "Fleet-Fusion",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
