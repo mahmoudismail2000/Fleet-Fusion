@@ -39,6 +39,46 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body,
+span,
+img,
+div,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    outline: none !important;
+}
+
+ion-cart {
+    --overflow: hidden !important;
+    overflow: hidden !important;
+}
+
+ion-app {
+    background-color: white !important;
+    background: white;
+    --background: white;
+}
+
+
+ion-content.no-padding-bottom {
+    --padding-bottom: 0% !important;
+}
+
+ion-title {
+    line-height: 25px;
+}
 
 
 
