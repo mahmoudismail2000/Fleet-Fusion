@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { FleetPageRoutingModule } from './fleet-routing.module';
+import { BranchesPageRoutingModule } from './branches-routing.module';
 
-import { FleetPage } from './fleet.page';
+import { BranchesPage } from './branches.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FleetPageRoutingModule
+    BranchesPageRoutingModule
   ],
-  declarations: [FleetPage]
+  declarations: [BranchesPage]
 })
-export class FleetPageModule {}
+export class BranchesPageModule {}

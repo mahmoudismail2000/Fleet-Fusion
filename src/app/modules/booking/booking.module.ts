@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { FleetPageRoutingModule } from './fleet-routing.module';
+import { BookingPageRoutingModule } from './booking-routing.module';
 
-import { FleetPage } from './fleet.page';
+import { BookingPage } from './booking.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FleetPageRoutingModule
+    BookingPageRoutingModule
   ],
-  declarations: [FleetPage]
+  declarations: [BookingPage]
 })
-export class FleetPageModule {}
+export class BookingPageModule {}
