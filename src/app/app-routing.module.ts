@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes, withHashLocation, withViewTransitions } from '@angular/router';
 
 const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
   {
     path:'',
     loadComponent:()=>import('./shared/components/splash/splash.component').then(m=>m.SplashComponent)
@@ -10,6 +15,10 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./modules/home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'fleet',
+    loadChildren: () => import('./modules/fleet/fleet.module').then( m => m.FleetModule)
   },
   {
     path: 'intro',

@@ -20,6 +20,7 @@ export class SplashComponent  implements OnInit {
    
 
   ngOnInit() {
+    localStorage.setItem("name","mahmoud")
     setTimeout(()=>{
 this.renderer2.addClass(this.myElement.nativeElement,'splashAnimate')
 setTimeout(()=>{

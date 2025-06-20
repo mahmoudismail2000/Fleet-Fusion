@@ -7,6 +7,7 @@ export default {
         "--main-color":"#00B27C",
         "--second-color":"#041E3F",
         "--third-color":"#E8FAF5",
+        "span-color":"#74767E",
       },
       keyframes: {
         fadeIn: {

@@ -1,0 +1,67 @@
+<nav class="py-5 shadow bg-white z-50">
+  <ul class="w-screen flex flex-wrap justify-evenly items-center">
+    <li>
+      <a routerLink="/home" routerLinkActive="tabs -text--main-color" #HomeA="routerLinkActive" class="flex flex-col justify-center items-center">
+        
+          @if(HomeA.isActive){
+            
+            <ion-icon src="./assets/icons/GreenHome.svg" class="w-[19px] h-[19px] "></ion-icon>
+          }@else {
+            <ion-icon src="./assets/icons/home.svg" class="w-[19px] h-[19px] "></ion-icon>
+          } 
+          <span class="text-[10px] leading-[14px]">Home</span>
+        
+      </a>
+      
+    </li>
+    <li>
+      
+      <a routerLink="/fleet" routerLinkActive="tabs -text--main-color" #fleetA="routerLinkActive" class="flex flex-col justify-center items-center">
+        @if(fleetA.isActive){
+        <ion-icon src="./assets/icons/GreenFleet.svg" ></ion-icon> 
+      }@else {
+        <ion-icon src="./assets/icons/fleet.svg" ></ion-icon> 
+
+        }
+        <span class="text-[10px] leading-[14px]">Fleet</span>
+
+      </a>
+    </li>
+    <li>
+      <a routerLink="/branches" routerLinkActive="tabs -text--main-color" #BranchesA="routerLinkActive" class="flex flex-col justify-center items-center">
+        @if(BranchesA.isActive){
+        <ion-icon src="./assets/icons/GreenBranches.svg" ></ion-icon> 
+        }@else {
+        <ion-icon src="./assets/icons/branch.svg" ></ion-icon> 
+
+        }
+        <span class="text-[10px] leading-[14px]">Branches</span>
+
+      </a>
+    </li>
+    <li>
+      <a routerLink="/bookings" routerLinkActive="tabs -text--main-color" #BookA="routerLinkActive" class="flex flex-col justify-center items-center">
+        @if(BookA.isActive){
+        <ion-icon src="./assets/icons/GreenBook.svg" ></ion-icon> 
+        }@else {
+        <ion-icon src="./assets/icons/book.svg" ></ion-icon> 
+
+        }
+        <span class="text-[10px] leading-[14px]">Booking</span>
+
+      </a>
+    </li>
+    <li>
+      <a routerLink="/accounts" routerLinkActive="tabs -text--main-color" #AccountA="routerLinkActive" class="flex flex-col justify-center items-center">   
+        @if(AccountA.isActive){
+        <ion-icon src="./assets/icons/GreenAccount.svg" ></ion-icon> 
+        }@else {
+        <ion-icon src="./assets/icons/account.svg" ></ion-icon> 
+
+        }
+        <span class="text-[10px] leading-[14px]">Account</span>
+
+      </a>
+    </li>
+  </ul>
+</nav>

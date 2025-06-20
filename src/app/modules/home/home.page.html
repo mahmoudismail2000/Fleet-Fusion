@@ -1,3 +1,88 @@
-<p>
-  Home works!
-</p>
+<section class="min-h-[100vh] p-4 pb-32 relative">
+<ion-content [fullscreen]="true">
+ <div class="-bg--third-color rounded-xl">
+    <div class="flex flex-wrap justify-between p-5 pe-0">
+      <div  class="w-1/2">
+        <h2 class="font-bold font-lg leading-6">New Booking</h2>
+        <p class="spanStyle">Find your favourite car from<br>over 30+ brands</p>
+      </div>
+      <div class="w-1/2 flex justify-end">
+        <img src="./assets/images/HomeCar.svg" alt="" class="w-[182px] h-[78px]">
+
+      </div>
+    </div>
+    <div class="grid grid-flow-col grid-col-2 gap-5 px-5 pb-5">
+      <div class=" flex flex-col justify-center items-center bg-white rounded-xl py-4 px-10">
+        <img src="./assets/icons/GreenCar.svg" alt="">
+        <h5 class="mt-4 font-bold leading-4 text-xs">Booking Now</h5>
+
+      </div>
+      <div class=" flex flex-col justify-center items-center bg-white rounded-xl py-4 px-10">
+        <img src="./assets/icons/GreenBook.svg" alt="">
+        <h5 class="mt-4 font-bold leading-4 text-xs">Subscription</h5>
+
+      </div>
+    </div>
+
+
+  </div>
+ 
+   <div class="mt-7">
+    <swiper-container pagination="true" class="swiper">
+    <swiper-slide>
+      <div class="grid grid-flow-col grid-cols-2 gap-0 bg-[#cfe6f1] rounded-xl p-5">
+        <div>
+          <span class="font-semibold leading-[22px]">Hot Deal 🔥</span>
+          <h2 class="leading-8 font-extrabold text-2xl text-[#CA2222]">50% OFF</h2>
+
+        </div>
+        <div>
+          <img src="./../../../assets/icons/pngegg 1.svg" alt="">
+        </div>
+
+      </div>
+    </swiper-slide>
+    <swiper-slide>Slide 2</swiper-slide>
+    <swiper-slide>Slide 3</swiper-slide>
+    <swiper-slide>Slide 4</swiper-slide>
+    
+  </swiper-container>
+   </div>
+
+   <div class="mt-7">
+    <p class="text-[14px] font-medium mb-5">Upcoming Booking</p>
+    <app-upcoming-item></app-upcoming-item>
+   </div>
+   <div class="mt-7">
+    <p class="text-[14px] font-medium mb-5">Pending Payments</p>
+    <div class="cardStyle">
+      <p class="text-[12px] font-bold text-[#CA2222]">Cancels at 2024-02-28</p>
+      <div class="flex flex-col">
+        <div>
+          <div class="w-1/4">
+        <img src="./assets/images/Img.jpg" class="w-[100%]" alt="">
+      </div>
+          <div class="flex flex-col items-start w-3/4">
+        <p>2.5 FHEV ST-Line Edition 5dr CVT Hybrid Estate</p>
+        <span class="spanStyle text-mai">FORD KUGA</span>
+        <span class="-text--main-color text-xs font-bold">100 SAR</span>
+      </div>
+        </div>
+        <div></div>
+      </div>
+
+    </div>
+   </div>
+
+   
+   
+</ion-content>
+ <div class="-bg--second-color w-[147px] h-[48px] rounded-full fixed flex justify-center items-center">
+<ion-icon src="./assets/icons/Support.svg" class="w-[19px] h-[19px] "></ion-icon>
+<span class="text-white font-semibold ps-2">Chat with us</span>
+   </div>
+   
+   
+ 
+
+</section>
