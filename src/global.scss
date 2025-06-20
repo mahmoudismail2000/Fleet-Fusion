@@ -97,6 +97,30 @@ ion-title {
     border: 0.5px solid #E4E5E7;
     border-radius: 8px;
 }
+.btn-second{
+width: 75px;
+height: 28px;
+padding-top: 4px;
+padding-right: 8px;
+padding-bottom: 4px;
+padding-left: 8px;
+border-radius: 6px;
+border: 1px solid #00B27C;
+background-color: #E8FAF5;
+color: #00B27C; 
+font-size: 12px;
+font-weight: 600px;
+line-height: 100%;
+}
 
+.special-offer{
+    @apply absolute bottom-0 left-0 h-[24px] w-[116px] bg-[#FFF9E6] rounded-[6px] px-[6px] py-[4px] text-[#CC9A06] font-bold text-[12px] leading-4 flex flex-wrap justify-center items-center;
+}
+.btn-border{
+  border: 1px solid #E4E5E7 !important;
+}
+.btn-main{
+    @apply text-white -bg--main-color rounded-[6px] px-3 py-[7px];
+}
 
 

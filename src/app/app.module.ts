@@ -9,11 +9,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { TabsComponent } from "./shared/components/tabs/tabs.component";
 import { UpcomingItemComponent } from './shared/components/upcoming-item/upcoming-item.component';
-
+import { SliderComponent } from './shared/components/slider/slider.component';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, SharedModule, TabsComponent,UpcomingItemComponent],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, SharedModule, TabsComponent,SliderComponent],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent]
 

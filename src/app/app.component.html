@@ -2,7 +2,9 @@
   <div class="bg-red-500">
     <ion-router-outlet></ion-router-outlet>
   </div>
-  <div class="z-50">
+  @if (authService.skip()) {
+    <div class="z-50">
     <app-tabs></app-tabs>
   </div>
+  }
 </ion-app>

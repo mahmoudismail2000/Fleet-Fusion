@@ -1,3 +1,4 @@
+import { AuthService } from './../../../auth/services/auth.service';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
@@ -13,8 +14,12 @@ import { IonContent } from "@ionic/angular/standalone";
 })
 export class IntroComponent  implements OnInit {
 
-  constructor() { }
+  constructor(private authService:AuthService) { }
 
   ngOnInit() {}
+  skip(){
+    this.authService.setSkip(true)
+    localStorage.setItem('skip',"skip")
+  }
 
 }

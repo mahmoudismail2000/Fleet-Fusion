@@ -9,15 +9,7 @@ export default {
         "--third-color":"#E8FAF5",
         "span-color":"#74767E",
       },
-      keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-      },
-      animation: {
-        fadeIn: 'fadeIn 5s ease-in forwards',
-      },
+      
      },
    },
    plugins: [require("flowbite/plugin")],

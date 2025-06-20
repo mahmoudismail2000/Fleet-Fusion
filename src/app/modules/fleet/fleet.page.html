@@ -1,13 +1,56 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>fleet</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">fleet</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<section class="min-h-[100vh] p-4 pb-24">
+  <ion-content [fullscreen]="true" >
+  
+<form class="max-w-md mx-auto mb-5">   
+    <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+    <div class="relative">
+        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+            </svg>
+        </div>
+        <input type="search" id="default-search" class="block border-none w-full p-3 ps-10 text-sm text-gray-400 rounded-lg bg-[#F3F3F4] dark:bg-gray-700  dark:placeholder-gray-400 dark:text-white" placeholder="Search Car Or Brands" />
+        
+    </div>
+</form>
+
+  <app-slider type="fleetOptions" [dataList]="fleetDataList" [slidesPerView]="3"></app-slider>
+  <div class="mt-5">
+    <h3 class="pb-5">Browse By Brand</h3>
+  <app-slider type="brands" [dataList]="brandDataList" [slidesPerView]="3"></app-slider>
+
+
+  </div>
+  <div class="my-5">
+
+    <div class="flex flex-wrap justify-between my-3">
+      <h3 class="pb-5">Best Cars</h3>
+      
+      <button class="btn-second">View All</button>
+      
+    </div>
+  <app-slider type="bestCars" [dataList]="bestCars" [slidesPerView]="1.2"></app-slider>
+
+
+  </div>
+   <div class="my-5">
+
+    <div class="flex flex-wrap justify-between my-3">
+      <h3 class="pb-5">Best Offers</h3>
+      
+      <button class="btn-second">View All</button>
+      
+    </div>
+  <app-slider type="bestCars" [dataList]="bestCars" [slidesPerView]="1.2"></app-slider>
+
+
+  </div>
+
 </ion-content>
+</section>

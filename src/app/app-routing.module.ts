@@ -2,9 +2,15 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes, withHashLocation, withViewTransitions } from '@angular/router';
 
 const routes: Routes = [
-  
   {
-    path:'',
+    path: '',
+    redirectTo: ()=>{
+      return localStorage.getItem('skip')=='skip'?'home':'splash';
+    },
+    pathMatch: 'full'
+  },
+  {
+    path:'splash',
     loadComponent:()=>import('./shared/components/splash/splash.component').then(m=>m.SplashComponent)
 
   },
@@ -37,11 +43,7 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./modules/home/home.module').then( m => m.HomePageModule)
   },
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  }
+  
 ];
 
 @NgModule({

@@ -1,0 +1,22 @@
+
+  <swiper-container space-between="12"
+    [attr.slides-per-view]="slidesPerView"
+  
+    
+    >
+
+      @for (item of dataList; track $index) {
+      <swiper-slide>
+
+        @if (type==="fleetOptions") {
+          <app-fleet-option [fleetOption]="item"></app-fleet-option>
+        }@else if (type==="brands") {
+          <app-brand [brand]="item"></app-brand>
+
+        }@else if (type==="bestCars") {
+          <app-car-item></app-car-item>
+
+        }
+    </swiper-slide> 
+  }
+  </swiper-container>
