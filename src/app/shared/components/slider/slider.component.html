@@ -16,6 +16,9 @@
         }@else if (type==="bestCars") {
           <app-car-item></app-car-item>
 
+        }@else if (type==="fleetListing") {
+          <app-fleet-option [fleetOption]="item" [isActive]="type==='fleetListing'?$first:false"></app-fleet-option>
+
         }
     </swiper-slide> 
   }

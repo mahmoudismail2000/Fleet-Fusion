@@ -1,0 +1,39 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>fleetListing</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<section class="h-full w-full pt-5 pb-32 px-4 relative">
+
+  <ion-content [fullscreen]="true" >
+
+      <app-slider type="fleetListing" [dataList]="fleetDataList" [slidesPerView]="3"></app-slider>
+      <div class="my-4">
+        <span class="spanStyle">50 results</span>
+      </div>
+      <div class="pb-4" >
+        @for (item of ["items","","",""]; track $index) {
+          <app-car-item title="fleetListing" [routerLink]="['/fleet/fleet-details',12]"></app-car-item>
+        }
+      </div>
+   
+
+    
+    
+  
+</ion-content>
+<div class="-bg--second-color w-[147px] h-[48px] rounded-full py-2 left-1/2 transform -translate-x-1/2 fixed flex justify-evenly items-center">
+  <div class="flex justify-center items-center">
+  <ion-icon src="./assets/icons/Filter.svg" class="w-[19px] h-[19px] "></ion-icon>
+<span class="text-white font-semibold ps-2 text-[12px]">Filter</span>
+</div>
+<div class="bg-gray-500 h-[100%] w-[1px]"></div>
+<div class="flex justify-center items-center">
+  <ion-icon src="./assets/icons/Sort.svg" class="w-[19px] h-[19px] "></ion-icon>
+<span class="text-white font-semibold ps-2 text-[12px]">Sort</span>
+</div>
+   </div>
+</section>
+  
+

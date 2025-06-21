@@ -7,7 +7,16 @@ const routes: Routes = [
   {
     path: '',
     component: FleetPage
+  },
+  {
+    path: 'fleet-listing',
+    loadChildren: () => import('./pages/fleet-listing/fleet-listing.module').then( m => m.FleetListingPageModule)
+  },
+  {
+    path: 'fleet-details/:id',
+    loadChildren: () => import('./pages/fleet-details/fleet-details.module').then( m => m.FleetDetailsPageModule)
   }
+
 ];
 
 @NgModule({

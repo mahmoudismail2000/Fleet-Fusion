@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { IonIcon } from "@ionic/angular/standalone";
 
@@ -13,6 +13,8 @@ import { IonIcon } from "@ionic/angular/standalone";
 export class CarItemComponent  implements OnInit {
 
   constructor() { }
+
+  @Input() title!:string
 
   ngOnInit() {}
 
