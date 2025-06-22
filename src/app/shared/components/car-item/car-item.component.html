@@ -1,5 +1,5 @@
 
-<div class="cardStyle" [class]="title=='fleetListing'?'mt-5':''">
+<div [ngClass]="{ 'mt-5': title=='fleetListing','cardStyle':title!=='fleetDetails' }">
   <div class="relative h-[144px]">
     <img src="./assets/images/CarShow.jpg" class="w-[100%] h-[100%]" alt="">
     <div class="special-offer">
@@ -8,18 +8,18 @@
 
     </div>
   </div>
-    <div class="flex flex-row justify-center items-center border-b-[1px] py-4">
-      <div class="flex flex-col items-start w-3/5">
-        <p class="font-bold text-[12px] leading-4">2.5 FHEV ST-Line Edition 5dr CVT Hybrid Estate</p>
-        <span class="spanStyle">FORD KUGA</span>
+    <div class="flex justify-center border-b-[1px] py-4" [class]="title=='fleetDetails'?'flex-col items-start':'flex-row items-center'">
+      <div class="flex flex-col items-start" [class]="title=='fleetDetails'?'w-100%':'w-3/5'">
+        <p class="font-bold" [class]="title=='fleetDetails'?'text-[16px] leading-6':'text-[12px] leading-4'">2.5 FHEV ST-Line Edition 5dr CVT Hybrid Estate</p>
+        <span class="spanStyle" >FORD KUGA</span>
       </div>
-      <div class="w-2/5 flex flex-col justify-center items-end ">
+      <div class="flex" [class]="title=='fleetDetails'?'flex-wrap justify-start mt-4':'flex-col justify-center items-end w-2/5'">
         <span class="spanStyle line-through self-center">125 SAR</span>
-        <span class="-text--main-color text-[14px] leading-[18px] font-bold">100 SAR <span class="spanStyle"> / Day</span></span>
+        <span class="-text--main-color leading-[18px] font-bold" [class]="title=='fleetDetails'?'text-[18px]':'text-[14px]'">100 SAR <span class="spanStyle"> / Day</span></span>
       </div>
     </div>
     
-    <div class="grid grid-rows-2 grid-cols-2 gap-3 mt-4" [class]="title=='fleetListing'?'grid-cols-3':'grid-cols-2'">
+    <div class="grid grid-cols-2 gap-3 mt-4" [class]="title=='fleetListing'?'grid-cols-3':'grid-cols-2 grid-rows-3'">
       <div class="flex flex-wrap justify-start items-center">
         <ion-icon src="./../../../../assets/icons/Speed.svg"></ion-icon>
         <span class="text-[12px] font-medium text-[#222325] leading-4 ps-3">460m (8min)</span>
@@ -35,6 +35,25 @@
         <span class="text-[12px] font-medium text-[#222325] leading-4 ps-3">Hatchback</span>
 
       </div>
+      @if(title=="fleetDetails"){
+        <div class="flex flex-wrap justify-start items-center">
+        <ion-icon src="./../../../../assets/icons/doors.svg"></ion-icon>
+        <span class="text-[12px] font-medium text-[#222325] leading-4 ps-3">{{4}} Doors</span>
+
+      </div>
+      <div class="flex flex-wrap justify-start items-center">
+        <ion-icon src="./../../../../assets/icons/peoples.svg"></ion-icon>
+        <span class="text-[12px] font-medium text-[#222325] leading-4 ps-3">{{5}} People</span>
+
+      </div>
+      <div class="flex flex-wrap justify-start items-center">
+        <ion-icon src="./../../../../assets/icons/Bags.svg"></ion-icon>
+        <span class="text-[12px] font-medium text-[#222325] leading-4 ps-3">{{2}} Large Bags</span>
+
+      </div>
+
+      }
+      
 
     </div>
     

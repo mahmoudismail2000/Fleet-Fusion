@@ -1,13 +1,32 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>fleetDetails</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">fleetDetails</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<section class="p-5">
+  <ion-content [fullscreen]="true">
+  <app-car-item title="fleetDetails"></app-car-item>
+  <div class="h-[200px] flex justify-center items-center overflow-hidden">
+
+  <!----------------------------------- Google Map -------------------------------------->
+    <!-- <google-map 
+  [height]="'200px'" 
+  [width]="'100%'" 
+  [center]="markerOptions.position" 
+  [options]="options"
+  [zoom]="12">
+  <map-marker [position]="markerOptions.position" [options]="markerOptions"></map-marker>
+</google-map> -->
+
+<div id="map" style="height: 300px; width: 100%;"></div>
+
+  </div>
+
+  
+
+  
+
+
 </ion-content>
+</section>

@@ -7,13 +7,19 @@ import { IonicModule } from '@ionic/angular';
 import { FleetDetailsPageRoutingModule } from './fleet-details-routing.module';
 
 import { FleetDetailsPage } from './fleet-details.page';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { CarItemComponent } from 'src/app/shared/components/car-item/car-item.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FleetDetailsPageRoutingModule
+    FleetDetailsPageRoutingModule,
+    GoogleMapsModule,
+    CarItemComponent
+    
+
   ],
   declarations: [FleetDetailsPage]
 })
