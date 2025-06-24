@@ -8,8 +8,8 @@
       @for (item of dataList; track $index) {
       <swiper-slide>
 
-        @if (type==="fleetOptions") {
-          <app-fleet-option [fleetOption]="item"></app-fleet-option>
+        @if (type==="fleet") {
+          <app-fleet-option [fleetOption]="item" [type]="type" (optionSelected)="onSelectOption($event)"></app-fleet-option>
         }@else if (type==="brands") {
           <app-brand [brand]="item"></app-brand>
 
@@ -17,7 +17,11 @@
           <app-car-item [routerLink]="['/fleet/fleet-details',12]"></app-car-item>
 
         }@else if (type==="fleetListing") {
-          <app-fleet-option [fleetOption]="item" [isActive]="type==='fleetListing'?$first:false"></app-fleet-option>
+          <app-fleet-option [fleetOption]="item" [isActive]=" type===type?$first:false"></app-fleet-option>
+
+        }
+        @else if (type==="fleetDetails") {
+          <app-fleet-option [fleetOption]="item" [type]="type" (optionSelected)="onSelectOption($event)"></app-fleet-option>
 
         }
     </swiper-slide> 

@@ -4,11 +4,25 @@
   </ion-toolbar>
 </ion-header> -->
 
-<section class="p-5">
+<section class="p-5 min-h-[100vh] pb-20">
   <ion-content [fullscreen]="true">
-  <app-car-item title="fleetDetails"></app-car-item>
-  <div class="h-[200px] flex justify-center items-center overflow-hidden">
+  <div>
+    <app-car-item title="fleetDetails"></app-car-item>
+  </div>
+  <div class="my-5">
+    <app-slider type="fleetDetails" [dataList]="fleetDataList" [slidesPerView]="2" (optionSelected)="onSelectOption($event)"></app-slider>
+  </div>
+  <div>
+    @if (optionSelected==fleetOptionsEnum.Delivery) {
+      <h3 class="text-[12px] font-bold pb-5">Delivery to</h3>
+    }@else if (optionSelected==fleetOptionsEnum.Pickup) {
+      <h3 class="text-[12px] font-bold pb-5">Pickup & Return Location</h3>
 
+    }@else if (optionSelected==fleetOptionsEnum.PickFromAirport) {
+      <h3 class="text-[12px] font-bold pb-5">Pickup From</h3>
+
+    }
+    <div class="border rounded-xl overflow-hidden">
   <!----------------------------------- Google Map -------------------------------------->
     <!-- <google-map 
   [height]="'200px'" 
@@ -19,14 +33,111 @@
   <map-marker [position]="markerOptions.position" [options]="markerOptions"></map-marker>
 </google-map> -->
 
-<div id="map" style="height: 300px; width: 100%;"></div>
+
+  <div id="map" style="height: 120px; width: 100%;"></div>
+  <div class="flex items-center p-4 border-t border-gray-200">
+    @if (optionSelected==fleetOptionsEnum.Delivery) {
+      <ion-icon src="./assets/icons/GreenBranches.svg"></ion-icon>
+    }@else if (optionSelected==fleetOptionsEnum.Pickup) {
+      <ion-icon src="./assets/icons/Pickup.svg"></ion-icon>
+
+    }
+    @else if (optionSelected==fleetOptionsEnum.PickFromAirport) {
+      <ion-icon src="./assets/icons/PickupAirport.svg"></ion-icon>
+
+    }
+    <div class=" w-full flex justify-between">
+      <div class="flex flex-col justify-center items-star ps-4">
+      <label for="return2" class="text-sm font-medium">Delivery to (Home)</label>
+      <span class="spanStyle">Al Olaya St 6173. jali. Saudi Arabia</span>
+    </div>
+    <button class="-text--main-color text-[12px] font-semibold">Change ></button>
+    </div>
+</div>
+ 
+    </div>
+  </div>
+  <div class="my-5">
+    <h3 class="text-[12px] font-bold" [class]="optionSelected==fleetOptionsEnum.Delivery?'pb-5':''">Return Option</h3>
+
+    @if (optionSelected==fleetOptionsEnum.Delivery) {
+      <div class="flex items-center p-4 border border-gray-200 rounded-xl ">
+    <input checked id="return1" type="radio" value="" name="ReturnOption" class="w-4 h-4 -text--main-color bg-gray-100 border-gray-300">
+    <div class="flex flex-col justify-center items-start ps-4">
+      <label for="return1" class="text-sm font-medium">Return to the nearest branch</label>
+      <span class="spanStyle">Once you finished the rental period you can return the car by yourself to the nearest branch</span>
+    </div>
+</div>
+    }
+<div class="flex items-center p-4 mt-3 border border-gray-200 rounded-xl">
+    <input id="return2" type="radio" value="" name="ReturnOption" class="w-4 h-4 -text--main-color bg-gray-100 border-gray-300">
+    <div class=" w-full flex justify-between">
+      <div class="flex flex-col justify-center items-star ps-4">
+      <label for="return2" class="text-sm font-medium">Return from your location</label>
+      <span class="spanStyle">Al Olaya St 6173. jali. Saudi Arabia</span>
+    </div>
+    <button class="-text--main-color text-[12px] font-semibold">Change ></button>
+    </div>
+</div>
+  </div>
+   <div >
+    <h3 class="text-[12px] font-bold pb-5">Booking Date</h3>
+
+    <div class="flex items-center p-4 border border-gray-200 rounded-xl">
+    <ion-icon src="./assets/icons/GreenBook.svg" class="w-5 h-5" ></ion-icon> 
+    <div class="w-full flex flex-col justify-center items-start ps-4 ">
+      <span class="spanStyle">Pick-up Date & Time</span>
+      <div class="w-full flex flex-wrap justify-between items-center pe-10">
+        <button class="text-[12px] font-medium">Feb 04. 10:00 AM</button>
+        <ion-icon src="./assets/icons/GrayArrow.svg" class="h-3 w-3"></ion-icon>
+        <button class="text-[12px] font-medium">Feb 05. 10:00 AM</button>
+      </div>
+    </div>
+    </div>
+
+  </div>
+  <div class="my-5">
+    <h3 class="text-[12px] font-bold pb-5">Price Details</h3>
+    
+  
+    <div class="relative border border-gray-200 rounded-xl overflow-hidden">
+        
+        <input type="search" id="default-search" class="block border-0 w-full px-4 py-2.5 text-sm placeholder-gray-500" placeholder="Enter Promo Code" required/>
+        <button type="button" class="-text--main-color text-[12px] font-semibold absolute bottom-3 end-4">Apply</button>
+    </div>
+    <div class="cardStyle my-4">
+    <div class="border-b-[1px] mb-2 pb-2">
+      <div class="flex justify-between items-center mb-2">
+        <span class="text-[14px] font-normal leading-5">2 days car rental value</span>
+        <span class="text-[14px] font-medium leading-5">200.0 SAR</span>
+      </div>
+      <div class="flex justify-between items-center">
+        <span class="text-[14px] font-normal leading-5">VAT</span>
+        <span class="text-[14px] font-medium leading-5">20.0 SAR</span>
+      </div>
+    </div>
+    
+    <div>
+      <div class="flex justify-between items-center">
+        <span class="text-[14px] font-normal leading-5">Total</span>
+        <span class="text-[16px] font-bold leading-5">170 SAR</span>
+      </div>
+      
+    </div>
+    
+    
+
+  </div>
+
+  <button class="btn-main w-full">Confirm and Pay</button>
+
+
+
+    
 
   </div>
 
   
-
   
-
-
 </ion-content>
 </section>

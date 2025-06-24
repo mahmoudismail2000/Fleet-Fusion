@@ -20,7 +20,7 @@
     </div>
 </form>
 
-  <app-slider type="fleetOptions" [dataList]="fleetDataList" [slidesPerView]="3"></app-slider>
+  <app-slider type="fleet" [dataList]="fleetDataList" [slidesPerView]="2" (optionSelected)="onSelectedFleetOptions($event)"></app-slider>
   <div class="mt-5">
     <h3 class="pb-5">Browse By Brand</h3>
   <app-slider type="brands" [dataList]="brandDataList" [slidesPerView]="3"></app-slider>

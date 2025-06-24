@@ -1,6 +1,11 @@
 <section>
 
- <div [routerLink]="fleetOption.name=='Delivery'?'/fleet/fleet-listing':''" class="flex flex-wrap justify-center items-center border border-1 py-2 rounded-full" [class]="isActive?'-bg--third-color -border--main-color':''">
+ <div class="flex flex-wrap justify-center items-center border border-1 py-2 rounded-full" 
+  
+ [ngClass]="{
+      '-bg--third-color -border--main-color': authService.selectedOption()==fleetOption.name&&type!=='fleet'
+    }"
+ (click)="onSelectOption(fleetOption.name)">
   <ion-icon [src]="fleetOption.img" alt=""></ion-icon>
   
   <span class="font-normal leading-5 text-[14px] ps-2">{{fleetOption.name}}</span>

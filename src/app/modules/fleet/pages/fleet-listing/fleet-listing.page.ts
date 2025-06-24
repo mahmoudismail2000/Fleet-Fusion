@@ -12,8 +12,8 @@ export class FleetListingPage implements OnInit {
 
   fleetDataList:FleetOption[]=[{img:"./assets/icons/Delivery.svg",name:"Delivery"},
         {img:"./assets/icons/Pickup.svg",name:"Pickup"},
-        {img:"./assets/icons/PickupAirport.svg",name:"Pickup airport"},
-        {img:"./assets/icons/Delivery.svg",name:"Delivery"}]
+        {img:"./assets/icons/PickupAirport.svg",name:"Pickup From airport"},
+        {img:"./assets/icons/Delivery.svg",name:"Disability Support"}]
 
   bestCars:object[]=[{},{}] 
   constructor() { }

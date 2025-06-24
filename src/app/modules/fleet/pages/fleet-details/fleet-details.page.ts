@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import * as maplibregl from 'maplibre-gl';
+import { FleetOptions } from 'src/app/core/enums/fleet-options';
+import { FleetOption } from 'src/app/core/models/fleet-option';
 @Component({
   selector: 'app-fleet-details',
   templateUrl: './fleet-details.page.html',
@@ -33,10 +35,15 @@ export class FleetDetailsPage implements OnInit {
 // };
 
 
-
- 
-
+fleetDataList:FleetOption[]=[{img:"./assets/icons/Delivery.svg",name:"Delivery"},
+      {img:"./assets/icons/Pickup.svg",name:"Pickup"},
+      {img:"./assets/icons/PickupAirport.svg",name:"Pickup From Airport"}]
+ fleetOptions!:FleetOptions
+fleetOptionsEnum=FleetOptions
+optionSelected:string=this.fleetOptionsEnum.Delivery
   constructor() { }
+
+  
 
   ngOnInit() {
     const map = new maplibregl.Map({
@@ -51,12 +58,19 @@ export class FleetDetailsPage implements OnInit {
   keyboard: false,             // disables keyboard navigation
   boxZoom: false,              // disables shift+drag zoom
   dragRotate: false,           // disables map rotation
-  touchZoomRotate: false       // disables pinch zoom/rotation
+  touchZoomRotate: false,       // disables pinch zoom/rotation
+  attributionControl: false,
+  });
+   map.on('load', () => {
+    map.resize();
+    map.setCenter([46.6753, 24.7136]);
+
+    new maplibregl.Marker({
+      element: this.createCustomMarker(),
+      anchor: 'center'   // <-- anchor at center!
+    }).setLngLat([46.6753, 24.7136]).addTo(map);
   });
 
-  new maplibregl.Marker({
-    element: this.createCustomMarker()
-  }).setLngLat([46.6753, 24.7136]).addTo(map);
   
     
   }
@@ -69,6 +83,10 @@ export class FleetDetailsPage implements OnInit {
   el.style.backgroundRepeat = 'no-repeat';
   el.style.backgroundPosition = 'center';
   return el;
+}
+
+onSelectOption(event:string){
+this.optionSelected=event
 }
 
 }
